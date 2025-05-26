@@ -6,7 +6,7 @@
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:DataType="pageModels:ManageMetaPageModel"
              x:Class="GratitudeLog.Pages.ManageMetaPage"
-             Title="Categories and Tags">
+             Title="Cats and Tags">
 
 
     <ContentPage.Behaviors>

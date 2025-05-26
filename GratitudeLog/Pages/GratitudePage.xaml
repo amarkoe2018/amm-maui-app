@@ -14,7 +14,7 @@
            Margin="0,10"/>
 
         <Button Text="Add"
-			Command="{Binding AddGratitude}"
+			Command="{Binding AddGratitudeCommand}"
             Margin="0,10"/>
 
         <Label Text="Gratitude Log"
