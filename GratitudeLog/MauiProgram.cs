@@ -6,6 +6,7 @@ namespace GratitudeLog
 {
     public static class MauiProgram
     {
+        public static IServiceProvider Services { get; private set; }
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
@@ -41,11 +42,21 @@ namespace GratitudeLog
             builder.Services.AddSingleton<MainPageModel>();
             builder.Services.AddSingleton<ProjectListPageModel>();
             builder.Services.AddSingleton<ManageMetaPageModel>();
+            builder.Services.AddSingleton<GratitudeRepository>();
+            builder.Services.AddSingleton<GratitudeListPageModel>();
+            builder.Services.AddSingleton<GratitudePage>();
 
             builder.Services.AddTransientWithShellRoute<ProjectDetailPage, ProjectDetailPageModel>("project");
             builder.Services.AddTransientWithShellRoute<TaskDetailPage, TaskDetailPageModel>("task");
 
-            return builder.Build();
+            //return builder.Build();
+
+            var app = builder.Build();
+            Services = app.Services; // ✅ store the service provider
+            return app;
         }
     }
 }
+
+
+

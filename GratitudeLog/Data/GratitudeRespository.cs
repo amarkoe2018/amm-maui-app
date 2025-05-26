@@ -55,7 +55,7 @@ namespace GratitudeLog.Data
         /// <summary>
         /// Retrieves a list of all gratitude entries from the database.
         /// </summary>
-        /// <returns>A list of <see cref="Gratitude Items"/> objects.</returns>
+        /// <returns>A list of <see cref="GratitudeEntries"/> objects.</returns>
         public async Task<List<GratitudeEntry>> ListAsync()
         {
             await Init();
