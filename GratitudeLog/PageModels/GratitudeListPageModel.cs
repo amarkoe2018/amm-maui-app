@@ -3,9 +3,9 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using GratitudeLog.Data;
 using GratitudeLog.Models;
-// using GratitudeLog.Services;
+using GratitudeLog.Services;
 using System.Collections.ObjectModel;
-
+using System.Diagnostics;
 
 namespace GratitudeLog.PageModels
 {
@@ -34,6 +34,11 @@ namespace GratitudeLog.PageModels
         [RelayCommand]
         private async Task AddGratitude()
         {
+            // Test behavior
+            Debug.WriteLine("AddGratitudeCommand fired!");
+            // Application.Current.MainPage.DisplayAlert("Test", "Add button works!", "OK");
+            await Shell.Current.DisplayAlert("Test", "Add button works!", "OK");
+
             if (string.IsNullOrWhiteSpace(NewEntryText))
                 return;
             
