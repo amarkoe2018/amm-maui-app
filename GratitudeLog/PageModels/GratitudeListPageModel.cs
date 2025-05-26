@@ -32,7 +32,7 @@ namespace GratitudeLog.PageModels
         }
 
         [RelayCommand]
-        private async Task AddGratitude()
+        public async Task AddGratitude()
         {
             // Test behavior
             Debug.WriteLine("AddGratitudeCommand fired!");
