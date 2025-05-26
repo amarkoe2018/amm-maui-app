@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace GratitudeLog.Models
 {
-    internal class Class1
+    public class GratitudeEntry
     {
+        public int ID { get; set; }
+        public string Entry { get; set; } = string.Empty;
+        public int Repeated { get; set; } = 1;
     }
 }

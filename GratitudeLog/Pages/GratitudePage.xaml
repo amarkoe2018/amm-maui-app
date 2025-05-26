@@ -2,19 +2,19 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GratitudeLog.Pages.GratitudePage"
-             Title="GratitudePage">
+             Title="Gratitude List">
     <VerticalStackLayout Padding="20">
         <Label Text="What are you grateful for today?"
            FontSize="20"
            HorizontalOptions="Center" />
 
-        <Entry x:Name="GratitudeEntry"
+        <Entry Text="{Binding NewEntryText}"
            Placeholder="Type here..."
            FontSize="16"
            Margin="0,10"/>
 
         <Button Text="Add"
-            Clicked="OnAddClicked"
+			Command="{Binding AddGratitude}"
             Margin="0,10"/>
 
         <Label Text="Gratitude Log"
@@ -23,10 +23,13 @@
            Margin="0,20,0,10"
            HorizontalOptions="Center"/>
 
-        <CollectionView x:Name="GratitudeList">
+        <CollectionView ItemsSource="{Binding GratitudeEntries}"
+                        SelectionMode="Single"
+                        SelectedItem="{Binding SelectedEntry, Mode=TwoWay}"
+                        Margin="0,0,0,20">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Label Text="{Binding .}" FontSize="16"/>
+                    <Label Text="{Binding Entry}" FontSize="16"/>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
